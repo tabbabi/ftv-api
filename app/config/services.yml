@@ -1,0 +1,7 @@
+parameters:
+#    parameter_name: value
+
+services:
+    article.handler:
+        class: AppBundle\Handler\ArticleHandler
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory"]

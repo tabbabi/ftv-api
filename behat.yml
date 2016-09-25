@@ -1,0 +1,23 @@
+default:
+  formatters:
+    pretty: true
+  calls:
+    error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
+  suites:
+    default:
+      contexts:
+        - FeatureContext: { container: "@service_container" }
+        - Behat\MinkExtension\Context\MinkContext
+        - Sanpi\Behatch\Context\RestContext
+        - Sanpi\Behatch\Context\JsonContext
+  extensions:
+    Behat\Symfony2Extension:
+      kernel:
+        env: "test"
+        debug: "true"
+    Behat\MinkExtension:
+      base_url: "http://localhost:8003"
+      sessions:
+        default:
+          symfony2: ~
+    Sanpi\Behatch\Extension: ~
