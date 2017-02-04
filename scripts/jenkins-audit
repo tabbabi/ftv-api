@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!C:\cygwin64\bin\bash
 
 #Get arguments
 FTVEN_ENV=$1
@@ -24,8 +24,3 @@ php composer.phar install --no-interaction
 mkdir -p reports/
 rm -rf reports/*
 php bin/phpunit -c app/ -d zend.enable_gc=0 -d memory_limit=-1 --coverage-clover reports/coverage.xml --coverage-html reports/coverage/ --log-junit reports/junit.xml
-#php bin/phpcs --report=checkstyle --report-file=reports/phpcs.xml --standard=vendor/instaclick/symfony2-coding-standard/Symfony2/ruleset.xml --extensions=php --ignore=Tests,Test,DataFixtures,Database src/ || true
-#php bin/phpcpd --exclude=Tests --exclude=DataFixtures --log-pmd=reports/phpcpd.xml src/ || true
-php bin/phpmd src/ xml app/config/phpmd.xml --reportfile reports/phpmd.xml --exclude=Tests,Test,DataFixtures,Database || true
-#php bin/pdepend --jdepend-xml=reports/jdepend.xml --jdepend-chart=reports/dependencies.svg --overview-pyramid=reports/overview-pyramid.svg src/
-#php bin/phploc --log-xml=reports/phploc.xml src/
