@@ -17,4 +17,4 @@ php composer.phar install --no-interaction
 mkdir -p reports/
 rm -rf reports/*
 phpunit -c app/ -d zend.enable_gc=0 -d memory_limit=-1 --coverage-clover reports/coverage.xml --coverage-html reports/coverage/ --log-junit reports/junit.xml
-php bin/phpmd src/ xml app/config/phpmd.xml --reportfile reports/phpmd.xml --exclude=Tests,Test,DataFixtures,Database || true
+bin\phpmd src/ xml app/config/phpmd.xml --reportfile reports/phpmd.xml --exclude=Tests,Test,DataFixtures,Database || true
