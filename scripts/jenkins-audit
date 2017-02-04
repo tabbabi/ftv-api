@@ -1,26 +1,19 @@
 #!C:\cygwin64\bin\bash
 
-#Get arguments
 FTVEN_ENV=$1
 FTVEN_MODULE=$2
 FTVEN_TEAM=$3
 
-#Get composer
 if [ ! -f "composer.phar" ]; then
     curl -sS https://getcomposer.org/installer | php
 fi
 
-#Replace parameters variables
 cp app/config/parameters.yml.dist app/config/parameters.yml
 
-#Clean cache / logs 
 rm -rf app/cache/* app/logs/*
 
-#Install dependencies
 php composer.phar install --no-interaction
 
-
-#Generate reports
 mkdir -p reports/
 rm -rf reports/*
 php bin/phpunit -c app/ -d zend.enable_gc=0 -d memory_limit=-1 --coverage-clover reports/coverage.xml --coverage-html reports/coverage/ --log-junit reports/junit.xml
