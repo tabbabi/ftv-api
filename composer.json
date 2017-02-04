@@ -24,7 +24,11 @@
         "stof/doctrine-extensions-bundle": "^1.2",
         "guzzlehttp/guzzle": "6.*",
         "willdurand/hateoas": "^2.10",
-        "willdurand/hateoas-bundle": "^1.2"
+        "willdurand/hateoas-bundle": "^1.2",
+        "predis/predis": "^1.1",
+        "snc/redis-bundle": "^2.0",
+        "pdepend/pdepend": "^2.5",
+        "phpmd/phpmd": "^2.6"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
@@ -37,7 +41,8 @@
         "behatch/contexts": "dev-master",
         "hautelook/alice-bundle": "~0.2",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "^4.8",
+        "instaclick/symfony2-coding-standard": "dev-remaster"
     },
     "scripts": {
         "symfony-scripts": [
